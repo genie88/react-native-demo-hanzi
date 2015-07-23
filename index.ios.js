@@ -103,7 +103,26 @@ var styles = StyleSheet.create({
   },
 
 
-  ////
+  //Study List Screen
+  header: {
+    marginTop: 64,
+    padding: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#29DF9A',
+  }, 
+  welcomeMsg: {
+    fontSize: 55,
+    color: '#FFF',
+    fontWeight: 'bold',
+    marginBottom:20,
+    
+  },
+  getStart: {
+    fontSize: 15,
+    fontWeight: 'bold',
+    color: '#FFF'
+  },
   separator: {
     height: 1,
     backgroundColor: '#dddddd'
@@ -283,12 +302,20 @@ class StudyListScreen extends Component {
 
   render() {
     return (
-      <ListView
-        dataSource={this.state.dataSource}
-        renderRow={this.renderRow.bind(this)}
-        keyboardDismissMode="on-drag"
-        keyboardShouldPersistTaps={true}
-        showsVerticalScrollIndicator={true}/>
+      <View >
+        <View style={styles.header}>
+          <Text style={styles.welcomeMsg}>你好</Text>
+          <Text style={styles.getStart}>Let us get started!</Text>
+        </View>
+        <ListView
+          dataSource={this.state.dataSource}
+          renderRow={this.renderRow.bind(this)}
+          keyboardDismissMode="on-drag"
+          keyboardShouldPersistTaps={true}
+          automaticallyAdjustContentInsets={false}
+          showsVerticalScrollIndicator={true}/>
+      </View>
+      
     );
   }
 
