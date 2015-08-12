@@ -373,33 +373,4 @@ BaseDb.prototype.count = function(query, callback) {
   });
 };
 
-// 子类继承之
-
-function Hanzi() {}
-Hanzi.prototype = new BaseDb('hanzis');
-
-var exports = {
-  hanzi: new Hanzi),
-};
-
-// 一些测试方法
-/*
-exports.notes.insert({NoteId: 'xxx3', 'title': "你好吗?", 'NotebookId': 'life', Tags: ['red', '你好'], CreatedTime: new Date()}, function(err, data){ 
-  console.log(err);
-});
-
-notes.update({NoteId: 'xxx3'}, {$set: {title: "你知道的", Tags: [], CreatedTime: new Date()}}, function(err) {
-  console.log(err);
-});
-notes.remove({NoteId: 'xxx3'}, function(err, rows) {
-  console.log("??");
-  console.log(err);
-  console.log(rows);
-});
-exports.notes.find({'$or': [{Title: new RegExp("你")}]}).sort({Title: -1}).exec(function(err, rows) {
-  console.log(err);
-  console.log(rows);
-});
-*/
-
-module.exports = exports;
+module.exports = BaseDb;
